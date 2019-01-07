@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    p{margin-bottom: 0 ;}
+    body, html{background: none !important;height: 100%;}
+    .yiqijuan_content{
+        background: url(static/images/donated_bg.png) no-repeat center ;
+        background-size: 100% 100%;
+        margin-top: 50px;
+        height: 100%;
+    }
+    .yiqijuan_share {
+        height: 45px;
+        padding: 0 15px  0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+        line-height: 45px;
+        background-color: #ededed;
+    }
+    #person_center {
+        float: right;
+        margin-right: 0.3rem;
+    }
+    .yiqijuan_share a{color: #908f90;font-size: 15px;}
+    .yiqijuan_share img {
+        width: 20px;
+        position: relative;
+        top: 8px;
+    }
+    .yiqijuan_share p {
+        font-size: 16px;
+        float: left;
+        color: #fff !important;
+    }
+    .person_top {
+        width: 100%;
+        height: auto;
+        padding-top: 40px;
+    }
+    .person_top > div {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .person_top p{
+        text-align: center;
+        font-size: 18px;
+        color: #a37c2c;
+        margin: 0 !important;
+        line-height: 1.5;
+    }
+    .yiqijuan_text{color: #555555 !important;font-size: 15px !important;}
+    .person_top img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    #target_amount {
+        height: 193px;
+        position: relative;
+        padding: 2% 10%;
+        z-index: 2;
+    }
+    #target_amount img {
+        display: block;
+        width: 80px;
+        height: 70px;
+        margin: 10px auto;
+    }
+    #together_text {
+        width: 80%;
+        position: absolute;
+        bottom: 0;
+        border: 1px solid #9f7829;
+        box-sizing: border-box;
+        z-index: -10;
+        border-radius: 5px;
+        padding: 4%;
+    }
+    
+    .zhujian {
+        width: 80%;
+        margin: 45px auto 0;
+        border: 1px solid #9f7829;
+        box-sizing: border-box;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .zhujian img {
+        width: 120px;
+        height: 75px;
+        margin: 10px 10px;
+        float: left;
+        border-radius: 10px;
+    }
+    .zhujian dl {
+        float: left;
+        font-size: 15px;
+        margin-top: 25px;
+        color: #555555;
+    }
+    #together_detail {
+        height: 35%;
+        font-size: 15px;
+        color: #a0a09f;
+        padding-bottom: 40px;
+    }
+    #dl1 {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+#together_detail dl span, #total_friend span{color: #9f7829;}
+#dl2 {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+.progress{height: 5px;width: 82%;float: left;margin:10px 10px 10px 0;background: #d6cfce;border-radius: 25px;overflow: hidden;}
+#progress_count {
+    color: #747474;
+    font-size: 15px;
+    float: right;
+    line-height: 1.5;
+}
+.progress-bar{width: 3%;background-color: orange;height: 100%;border-radius: 25px;}
+.clear {
+    clear: both;
+}
+#total_friend {
+    width: 100%;
+    text-align: center;
+    color: #747474;
+}
+.footer_btn {
+    width: 40%;
+    color: #fff;
+    background-color: #af5825;
+    border-radius: 0.2rem;
+    float: left;
+}
+#juankuai {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border-top: 1px solid #dcdcdf;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 10;
+    font-size: 15px;
+    padding: 5px 10px 0;
+    left: 0;
+}
+#juankuai_left {
+    float: left;
+    text-align: center;
+    line-height: 36px;
+    background-color: #a37c2c;
+}
+#juankuai_right {
+    float: right;
+    text-align: center;
+    line-height: 35px;
+    background-color: #fff;
+    color: #a37c2c;
+    border: 1px solid #a37c2c;
+}
+.else_box{
+    padding: 7px 4%;
+    font-size: 15px;
+    border-bottom: 1px solid #a37c2c;
+    color: #747474;
+}
+.else_box span{float: right;font-size: 14px;}
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+
+<div class="yiqijuan_content">
+        <div class="yiqijuan_share">
+            <p><a href="javascript:;" id="back">
+            &lt;返回首页
+            </a></p>
+            <a href="javascript:;" id="person_center">
+                <img src="static/images/person_ico.png" alt="">
+                <span>个人中心</span>
+            </a>
+        </div>
+        <div class="person_top">
+                <div>
+                    <img src="static/images/head_pic.png">
+                </div>
+                <p>张迪迪 邀您一起行善积福</p>
+                <p class="yiqijuan_text">每人奉献一点点，将会凝聚巨大的力量</p>
+            </div>
+        <div id="target_amount">
+            <img src="static/images/ico33.png">
+            <div id="together_text">
+                <div id="together_detail">
+                    <dl id="dl1">
+                        <dt><span>0</span>人</dt>
+                        <dd>参与人数</dd>
+                    </dl>
+                    <dl id="dl2">
+                        <dt style="text-align: right;"><span>0</span>元</dt>
+                        <dd>捐款金额</dd>
+                    </dl>
+                </div>
+                <p>行善目标：100元</p>
+                <div class="progress" >
+                    <div class="progress-bar">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+                <span id="progress_count" class="percentage">50%</span>
+                <div class="clear"></div>
+                <p id="total_friend">共有 <span>0</span> 位小伙伴一起参与</p>
+            </div>
+        </div>
+        <div class="zhujian">
+            <div class="else_box">
+                行善的项目
+                <span>还需捐款100元</span>
+            </div>
+            <img src="static/images/timg.jpg">
+            <dl>
+                <dt>"日行一善"供斋</dt>
+                <dd>供斋简介</dd>
+            </dl>
+        </div>
+        <div id="juankuai">
+            <div id="juankuai_left" class="footer_btn">
+                我要捐款
+            </div>
+            <div id="juankuai_right" class="footer_btn">
+                <span>我也要发起行善</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

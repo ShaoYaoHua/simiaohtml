@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <!-- <script src="static/js/mui.min.js"></script> -->
+    <script src="static/js/jquery-2.1.0.js"></script>
+    <!-- <link rel="stylesheet" href="http://qidian.gtimg.com/lulu/theme/peak/css/common/ui/Tips.css"> -->
+    <!-- <script src="http://qidian.gtimg.com/c/=/lulu/theme/peak/js/common/ui/Follow.js,/lulu/theme/peak/js/common/ui/ErrorTip.js,/lulu/theme/peak/js/common/ui/Validate.js"></script> -->
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    .num_box {
+        width: auto;
+        overflow: hidden;
+        text-align: center;
+    }
+    .num_box p{color: #000;font-size: 16px;}
+    .heng-line{
+        background: url(static/images/top_bg.png) no-repeat center !important;
+        background-size: 100% 100% !important;
+    }
+    footer {
+        height: 50px !important;
+        line-height: 50px !important;
+        border-top: 1px solid #c8c7cc;
+    }
+    .rxys h1 {
+        color: #9f7829;
+        font-weight: bold !important;
+    }
+    .flex_box > li:last-child{margin: 0 auto;}
+    .page_hole{
+        padding: 0 15px;
+    }
+    .num {
+        background: url(static/images/num_black.png) top center repeat-y;
+        width: 14px;
+        height: 16px;
+        float: left;
+        background-size: 100% 150px;
+        position: relative;
+        top: 8px;
+    }
+    #validateForm{overflow: hidden;width: 100%;text-align: initial;}
+    select {
+    margin-top: 1px;
+    border: 1px solid #b5b5b5 !important;
+    }
+    .select_op{width: 100%;height: 60px;position: relative;}
+    .select_op:after{
+        content: "▾";
+        
+        position: absolute;
+        right: 3%;
+        top: 50%;
+        pointer-events: none;
+        font-size: 30px;
+        margin-top: -20px;
+        transform:scale(1.7,1);
+        -webkit-transform: scale(1.7,1);
+    }
+    form{text-align: left;}
+    form p{color: initial;font-size: 18px;}
+    form p span{color: red;}
+    .cell{border-top: 1px dashed #b5b5b5;color: red;padding: 15px 0;font-size: 14px;}
+    .cell input{margin-right: 5px;height: 18px;width: 18px;position: relative; top: 4px;}
+    .cell2 input[type=submit]{
+        height: 40px;
+        width: 100%;
+        background: #9f7829;
+        border: none;
+    }
+    .join_text{padding:25px 0;}
+    .join_text li{font-size: 14px;}
+    .join_text li:first-child{font-size: 20px;padding: 10px 0; }
+    .join_text li a{text-decoration: underline;color: #9f7829;}
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+    <div class="heng-line">
+    </div>
+    <div class="yf_title">
+        <img src="static/images/logo.png" />
+        <!-- <div class="num_box">
+                    <div class="num"></div>
+                    <div class="num"></div>
+                    <div class="num"></div>
+            <p style="display:inline-block;line-height:30px;margin:0 0 0 3px;float:left;color:#979696;">份随喜</p>
+        </div> -->
+
+    </div>
+    <div style="line-height: 0;">
+            <img src="static/images/banner.png" alt="" style="width: 100%;" />
+    </div>
+
+
+
+  
+
+
+
+
+
+<div class="rxys">
+    <h1 class="pub_title">无锡观宗讲寺-禅修报名处</h1>
+    <div class="page_hole">
+        <div class="num_box">
+            <p style="display:inline-block;line-height:30px;float: left;">（已有</p>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <p style="display:inline-block;line-height:30px;float:left;">人报名，当天回复）</p>
+
+            
+        </div>
+        <form>
+                <p>我要报名参加</p>
+                <div class="select_op">
+                    <select>
+                        <option selected disabled style="display:none;">请选择</option>
+                        <option>选项1</option>
+                        <option>选项2</option>
+                    </select>
+                </div>
+                <p>姓名</p>
+                <input type="text"/>
+                <p>姓别</p>
+                <div class="select_op">
+                    <select>
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+                </div>
+                <p>身份证号</p>
+                <input  type="text"/>
+                <p> 手机号码<span>（请核对无误，不加空格）</span></p>
+                <input name="tel" oninput = "value=value.replace(/[^\d]/g,'')" type="tel"/>
+                <p>报名人数</p>
+                <div class="select_op">
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+                <p>健康状况</p>
+                <div class="select_op">
+                    <select>
+                        <option>健康</option>
+                        <option>体弱多病</option>
+                    </select>
+                </div>
+                <p>紧急联系人姓名</p>
+                <input type="text"/>
+                <p>与紧急联系人关系</p>
+                <input type="text"/>
+                <p>紧急联系人手机号</p>
+                <input name="tel" oninput = "value=value.replace(/[^\d]/g,'')" type="text"/>
+                <p>申请说明</p>
+                <textarea placeholder="请输入您参加的原因或目的" cols="30" rows="5"></textarea>
+                <div class="cell">
+                    <input type="checkbox" id="checkAgree" required=""><label class="ui-checkbox" for="checkAgree"></label><label class="ml5 f14" for="checkAgree">我声明：以上内容真实、没有隐瞒健康情况。</label>
+                </div>
+                <div class="cell2">
+                    <input type="submit" value="提交报名">
+                </div>
+            </form>
+        <ul class="join_text">
+            <li>报名说明：</li>
+            <li>1.禅修条件:①18岁以上, 65岁以下；性别不限；不能携带儿童。②身心健康，无传染疾病及精神疾病。③目前无违法在逃行为。 </li>
+            <li>④恭敬佛、法、僧。⑤不需要剃发</li>
+            <li>2.如发现隐瞒健康情况等信息，将不能参加禅修。</li>
+            <li>3.因为寺院需要是前为报名者做食宿安排，所以必须要提前在网上报名， 请谅解。如果不提前报名，食宿自理。</li>
+            <li>4.短期禅修QQ交流群号：********* ( 验证填写：那摩阿弥陀佛 )</li>
+            <li>5.慈恩寺微信公众号: *****</li>
+            <li>6.点击这里：<a href="#">在线咨询</a></li>
+            <li>7.点击查看：<a href="#">交通路线及报到须知</a></li>
+            <li>8.点击查看：<a href="#">寺院吃住条件、禅修内容等</a></li>
+        </ul>
+    </div>
+    
+    
+</div>
+
+
+<footer>
+    <img style="width:80px;" src="static/images/bot_logo.png" alt="" />
+    <span class="foot_txt"> 技术支持 无锡苏商</span>
+</footer>
+<script src="static/js/index.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+
+    function gohome()
+
+    {
+        $.ajax({
+                        type: 'post',
+                        url: '/Simiao/Center/wx_getcode',
+                        success: function (sjson) {
+
+                            location.href = sjson.url;
+                        }
+                    })
+
+
+
+
+
+    }
+
+
+    $(function () {
+        var u = 30;
+        function gun() {
+            $(".num").css('backgroundPositionY', 0);
+            var result = 621;
+            var num_arr = (result + '').split('');
+            $(".num").each(function (index) {
+                var _num = $(this);
+                setTimeout(function () {
+                    _num.animate({
+                        backgroundPositionY: (u * 60) - (u * num_arr[index])
+                    }, {
+                        duration: 1000 + index * 1000,
+                        easing: "swing",
+                        complete: function () {
+                            if (index == 3) isBegin = false;
+                        }
+                    });
+
+                }, index * 300);
+
+            });
+
+        }
+        gun();
+        // var mar_h=($('.yf_title').height()-30)/2;
+        // $('.num_box').css('margin-top',mar_h);
+
+    });
+
+
+    
+
+    
+
+
+</script>
+
+    <input name="__RequestVerificationToken" type="hidden" value="Zkf-nLPli1KMn8xLCnDRocRL9_UT8hZ4EXV3g5OhSyK9hSJW2kds_r7XpO5j0CidgjWgoZwtelOSEgQ_BF06RvKLm2QF7dQiyk-qmF5_BiA1" />
+</body>
+</html>

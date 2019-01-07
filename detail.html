@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    body, html {
+        background-color: #fff !important;
+    }
+    .num_box {     
+        width: auto;
+        float:right;
+        z-index: 8;
+        overflow: hidden;
+        text-align: center;
+    }
+    .heng-line{
+        background: url(static/images/top_bg.png) no-repeat center !important;
+        background-size: 100% 100% !important;
+    }
+    .num {
+        background: url(static/images/num_black.png) top center repeat-y;
+        width: 18px;
+        height: 30px;
+        float: left;
+        background-size: 16px 300px;
+    }
+    footer {
+        height: 50px !important;
+        line-height: 50px !important;
+        border-top: 1px solid #c8c7cc;
+    }
+    .scorll_txt li {
+        font-family: initial !important;
+        font-size: 16px !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .scorll_txt .mui-table-view {
+        padding: 6px 25px !important;
+    }
+    .rxys h1 {
+        color: #9f7829;
+        font-weight: bold !important;
+    }
+    .details{padding-top: 15px;text-align: center;}
+    .details p{font-size: 18px;display: inline-block;padding: 10px 20px;border-bottom: 2px solid #9f7829;margin: 0 !important;}
+    .details_font{padding: 25px !important;}
+    .details_font li{text-indent: 2em; color: #5a5652;font-size: 16px;}
+    .ico_bbox{overflow: hidden;padding: 30px 20px 0;}
+    .ico_bbox li{float: left;font-size:15px;text-align: center;background: #9f7829;height: 40px;width: 40%;line-height: 40px;color: #fff;border-radius: 5px;}
+    .ico_bbox li:last-child{float: right;}
+    .ico_bbox li a{color: #FFF;}
+    .ico_bbox li img{height: 20px;position: relative;top: 5px;}
+    .masking_box,.masking_box2 {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10000;
+        display: none;
+    }
+    .popup_menu{
+        width: 85%;
+        height: auto;
+        margin: 20% auto;
+        background: #FFF;
+        border-radius: 15px;
+        box-sizing: border-box;
+        padding: 30px;
+    }
+    .popup_menu ul li{
+        border: 1px solid #a87e2b;
+        border-radius: 5px;
+        padding: 3px 18px;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    .popup_menu .pay_but{
+        border: none;
+        display: block;
+        margin: 0 auto;
+        width: 135px;
+        height: 35px;
+        background: #a17d36;
+        color: #FFF;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .popup_menu ul li input{
+        width: 60%;
+        margin: 0;
+        height: 25px;
+        border: none;
+    }
+    .popup_menu ul li span{float: right;}
+    .popup_menu ul li textarea{
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+    .popup_menu h2{
+        font-size: 18px;
+        font-family: KaiTi;
+        color: #9f7829;
+        text-align: center;
+    }
+    .pop_m2 ul li input, .pop_m2 ul li textarea{padding:2px 5px;}
+    .pop_m2{line-height: 1.5;font-family: KaiTi;}
+    .sel_card{display: flex;justify-content: space-around;}
+    .sel_card li{
+        padding: 0 !important;
+        margin: 10px 10px 10px 0 !important;
+        text-align: center;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        
+    }
+    .sel_card li:last-child{margin-right: 0 !important;}
+    .add_col{
+        background: #9f7829;
+        color: #FFF;
+    }
+    #spe_sx{width: 70%;float: right;padding: 0;}
+    #spe_sx input{width: 90%;}
+    .popup_menu ol{overflow: hidden; margin: 10px 0;}
+    .mui-table-view img{width: 200px;}
+    .masking_box2 .popup_menu{padding: 1px 30px 30px;}
+    .masking_box2 img{width: 200px;margin-bottom: 10px;display: block;margin: 15px auto;}
+    .masking_box2 .pay_but{width: 100%;line-height: 35px;}
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+    <div class="heng-line">
+    </div>
+    <div class="yf_title">
+        <img src="static/images/logo.png" />
+        
+
+    </div>
+    <div style="line-height: 0;">
+            <img src="static/images/banner.png" alt="" style="width: 100%;" />
+    </div>
+
+<div class="rxys">
+    <h1>在线供斋</h1>
+    <ul class="flex_box mui-table-view">
+        
+    </ul>
+</div>
+<div class="scorll_txt" id="scrollDiv" style="height:88px; overflow: hidden;">
+        
+    <ul class="mui-table-view">
+        <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+        <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+        <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+        <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+        <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+        <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+    </ul>
+</div>
+
+<script>
+    (function ($) {
+        $.fn.myScroll = function (options) {
+            //默认配置
+            var defaults = {
+                speed: 40,  //滚动速度,值越大速度越慢
+                rowHeight: 24 //每行的高度
+            };
+
+            var opts = $.extend({}, defaults, options), intId = [];
+
+            function marquee(obj, step) {
+
+                obj.find("ul").animate({
+                    marginTop: '-=1'
+                }, 0, function () {
+                    var s = Math.abs(parseInt($(this).css("margin-top")));
+                    if (s >= step) {
+                        $(this).find("li").slice(0, 1).appendTo($(this));
+                        $(this).css("margin-top", 0);
+                    }
+                });
+            }
+
+            this.each(function (i) {
+                var sh = opts["rowHeight"], speed = opts["speed"], _this = $(this);
+                intId[i] = setInterval(function () {
+                    if (_this.find("ul").height() <= _this.height()) {
+                        clearInterval(intId[i]);
+                    } else {
+                        marquee(_this, sh);
+                    }
+                }, speed);
+
+                _this.hover(function () {
+                    clearInterval(intId[i]);
+                }, function () {
+                    intId[i] = setInterval(function () {
+                        if (_this.find("ul").height() <= _this.height()) {
+                            clearInterval(intId[i]);
+                        } else {
+                            marquee(_this, sh);
+                        }
+                    }, speed);
+                });
+
+            });
+
+        }
+
+    })(jQuery);
+
+$("#scrollDiv").myScroll({
+    speed: 40, //数值越大，速度越慢
+    rowHeight: 22 //li的高度
+});
+</script>
+<div class="rxys details_box">
+    <div class="details mui-table-view">
+        <p>详情</p>
+    </div>
+    <ul class="details_font">
+        <li>『盂兰盆经』云：若能以饭食、卧具、医药供养十方僧众，藉此十方僧众清净共修，功德回向之力，能使供养者，往昔七世父母、六亲眷属得远离三恶道，现世父母及其本人，长寿无病无恼，衣食自然具足，身心安乐。</li>
+        <li>供斋，施主布施财物于寺中，上供十方诸佛，中奉诸圣贤，下及三途六道一切有情。受此供养者，以诵经礼佛回向护法龙天，使功德主增福增慧、广结佛缘，所愿皆成。</li>
+    </ul>
+    <ul class="ico_bbox">
+        <li class="btn_b"><img src="static/images/ico3.png" alt=""> 我要随喜</li>
+        <li class="btn_b2"><img src="static/images/ico3.png" alt=""> 好友“一起捐”</li>
+    </ul>
+</div>
+<div class="masking_box">
+        <div class="popup_menu">
+            <ul>
+                <li>姓名：<input type="text" /> </li>
+                <li>随喜：<input type="number" oninput = "value=value.replace(/[^\d]/g,'')"/><span>元</span></li>
+                <li>电话：<input type="tel" /></li>
+                <li>愿望：<textarea></textarea></li>
+            </ul>
+            <input class="pay_but" type="button" value="确认支付"/>
+        </div>
+</div>
+<div class="masking_box2">
+        <div class="popup_menu">
+            <img src="static/images/top_together.png" alt="">
+            <ul>
+                <li>目标金额：<input type="number" oninput = "value=value.replace(/[^\d]/g,'')"/><span>元</span></li>
+                <li>姓名：<input type="text" /> </li>
+                <li>电话：<input type="tel" /></li>
+                <li>呼唤小伙伴：<textarea placeholder="每人奉献一点点，将会凝聚巨大的力量。"></textarea></li>
+            </ul>
+            <a href="#" class="pay_but">下一步</a>
+        </div>
+</div>
+<script>
+        $(function () {
+            $(document).ready(function () {
+                $('body').height($('body')[0].clientHeight);
+            });
+            $('.btn_b').click(function(){
+                $(".masking_box").fadeIn();
+    
+            })
+            $('.btn_b2').click(function(){
+                $(".masking_box2").fadeIn();
+    
+            })
+            $(".masking_box").click(function () {
+                if (event.target == this) {
+                    $(".masking_box").fadeOut();
+                }
+            })
+            $(".masking_box2").click(function () {
+                if (event.target == this) {
+                    $(".masking_box2").fadeOut();
+                }
+            })
+            $(".sel_card li").click(function () {
+                $(this).addClass("add_col").siblings().removeClass("add_col");
+            })
+        })
+    </script>
+<footer>
+    <img style="width:80px;" src="static/images/bot_logo.png" alt="" />
+    <span class="foot_txt"> 技术支持 无锡苏商</span>
+</footer>
+<script>
+    $(function(){
+        var flexHei=$('.flex_box > li').width();
+        $('.flex_box > li').height(flexHei)+'px';
+    })
+
+</script>
+
+    <script src="static/js/index.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+
+    function gohome()
+
+    {
+        $.ajax({
+                        type: 'post',
+                        url: '/Simiao/Center/wx_getcode',
+                        success: function (sjson) {
+
+                            location.href = sjson.url;
+                        }
+                    })
+
+
+
+
+
+    }
+
+
+    $(function () {
+        var u = 30;
+        function gun() {
+            $(".num").css('backgroundPositionY', 0);
+            var result = 621;
+            var num_arr = (result + '').split('');
+            $(".num").each(function (index) {
+                var _num = $(this);
+                setTimeout(function () {
+                    _num.animate({
+                        backgroundPositionY: (u * 60) - (u * num_arr[index])
+                    }, {
+                        duration: 1000 + index * 1000,
+                        easing: "swing",
+                        complete: function () {
+                            if (index == 3) isBegin = false;
+                        }
+                    });
+
+                }, index * 300);
+
+            });
+
+        }
+        gun();
+        var mar_h=($('.yf_title').height()-30)/2;
+        $('.num_box').css('margin-top',mar_h);
+
+    });
+
+
+    $(function () {
+
+
+            var ua = navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i)=="micromessenger") {
+
+
+
+
+
+
+
+            } else {
+
+                $("#isplay").hide();
+
+            }
+
+
+    })
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: 'wx75f7d78a646f521e', // 必填，公众号的唯一标识
+        timestamp: '1546393278', // 必填，生成签名的时间戳
+        nonceStr: '164BC7C44126EBEC86F9276687961405', // 必填，生成签名的随机串
+        signature: 'fd4f373f7ae6f92093ffa23291b10e02bdcf165e',// 必填，签名，见附录1
+        jsApiList: ["checkJsApi", "onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ", "onMenuShareQZone"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+
+    wx.ready(function () {
+
+        //朋友圈
+        wx.onMenuShareTimeline({
+            title: '云峰禅寺助建大雄宝殿', // 分享标题
+            link: 'http://yfs.wxsushang.com/Simiao/Meiri', // 分享链接
+            imgUrl: 'http://yfs.wxsushang.com/img/bottom_logo.png',
+            success: function (res) {
+                location.href = " /Simiao/Meiri/";
+
+                alert('已分享');
+            },
+            cancel: function (res) {
+                alert('已取消');
+            },
+            fail: function (res) {
+                alert(JSON.stringify(res));
+            }
+        });
+        //朋友
+        wx.onMenuShareAppMessage({
+            title: '云峰禅寺助建大雄宝殿', // 分享标题
+            desc: '云峰禅寺助建大雄宝殿已有 621 捐款', // 分享描述
+            link: 'http://yfs.wxsushang.com/Simiao/Meiri', // 分享链接
+            imgUrl: 'http://yfs.wxsushang.com/img/bottom_logo.png', // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+                location.href = " /Simiao/Meiri/";
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+                alert("取消分享");
+            }
+        });
+    });
+
+
+</script>
+
+    <input name="__RequestVerificationToken" type="hidden" value="Zkf-nLPli1KMn8xLCnDRocRL9_UT8hZ4EXV3g5OhSyK9hSJW2kds_r7XpO5j0CidgjWgoZwtelOSEgQ_BF06RvKLm2QF7dQiyk-qmF5_BiA1" />
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    p{margin-bottom: 0 ;}
+    body, html{background-color: #f2f2f2 !important;}
+    #main_web {
+        width: 25px;
+        height: 25px;
+        float: right;
+    }
+    .person_content{padding-bottom: 30px;}
+    .person_top {
+        width: 100%;
+        height: auto;
+        background: url(../images/center_bg.png) no-repeat center top;
+        background-size: 100%;
+    }
+    .person_top > div {
+        width: 100%;
+        text-align: center;
+    }
+    .person_top img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+        top: -18px;
+    }
+    .person_top p {
+        width: 100%;
+        line-height: 0;
+        text-align: center;
+        color: #9f7829;
+        margin-bottom: 0;
+        font-size: 16px;
+    }
+    .bg_top{height: 45px;width: 100%;background: #9f7829;padding: 10px;box-sizing: border-box;overflow: hidden;}
+    .person_list > li {
+        border-top: 1px solid #d8d8d9;
+        border-bottom: 1px solid #d8d8d9;
+        height: 43px;
+        font-size: 15px;
+        background-color: #fff;
+        margin-top: 25px;
+        color: #4e4e4e;
+        line-height: 43px;
+        padding: 0 15px;
+    }
+    .record_right {
+        float: right;
+        width: 50%;
+        padding: 6px 0;
+    }
+    .record_right > p {
+        width: 50%;
+    }
+    .by_type, .by_time {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        float: left;
+        text-align: center;
+        border: 1px solid #d2d0d0;
+        box-sizing: border-box;
+    }
+    .person_list > li span{
+        float: right;
+    }
+    .person_list > li a{display: block;color: #4e4e4e;}
+    .by_time{
+        border-top-right-radius: 10px !important;
+        border-bottom-right-radius: 10px !important;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    #yiqijuan_panel, #record_list_1, #record_list_2{
+        font-size: 15px;
+        padding: 0 15%;
+        border-bottom: 1px solid #d8d8d9;
+        display: none;
+        background-color: #fff;
+        width: 100%;
+    }
+    #yiqijuan_panel p, #record_list_1 p, #record_list_2 p{
+        height: 40px;
+        line-height: 40px;
+    }
+    #yiqijuan_panel p span:last-child, #record_list_1 p span:last-child, #record_list_2 p span:last-child{
+        float: right;
+    }
+    .selected_order {
+        background-color: #9f7829;
+        color: #FFF;
+        border: none;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+<div class="person_content">
+        <div class="bg_top"><img src="static/images/home.png" id="main_web"></div>
+        <div class="person_top">
+            <div>
+                <img src="static/images/head_pic.png">
+            </div>
+            <p>从2017年10月10至今，您已随喜善款0元</p>
+        </div>
+        <ul class="person_list">
+
+            <li class="yiqijuan">我发起的一起捐<span>&gt;</span></li>
+            <div id="yiqijuan_panel" style="">
+                <p><span>测试人</span><span>测试日期</span></p>
+                <p><span>测试人</span><span>测试日期</span></p>
+            </div>
+            <li>
+                捐款记录
+                <div class="record_right">
+                    <p class="by_type">按项目分类</p>
+                    <p class="by_time">按时间排序</p>	
+                </div>
+            </li>
+            <div id="record_list_1" style="">
+                <p><span>测试人</span><span>项目一</span></p>
+                <p><span>测试人</span><span>项目二</span></p>
+                <p><span>测试人</span><span>项目三</span></p>
+            </div>
+            <div id="record_list_2" style="display: none;">
+                <p><span>测试人</span><span>测试日期1</span></p>
+                <p><span>测试人</span><span>测试日期2</span></p>
+                <p><span>测试人</span><span>测试日期3</span></p>
+            </div>
+            <li><a href="">我报名的活动<span>&gt;</span></a></li>
+            <li><a href="">法事预约<span>&gt;</span></a></li>
+            <li><a href="">关于我们<span>&gt;</span></a></li>
+            <li><a href="">联系我们<span>&gt;</span></a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$(".yiqijuan").click(function(){
+				$("#yiqijuan_panel").slideToggle();
+		});
+		$(".by_type").click(function(){
+			$(".by_type").addClass("selected_order");
+			$(".by_time").removeClass("selected_order");
+			$("#record_list_2").hide();
+			
+				$("#record_list_1").slideToggle();
+			
+		});
+		$(".by_time").click(function(){
+			$(".by_time").addClass("selected_order");
+			$(".by_type").removeClass("selected_order");
+			$("#record_list_1").hide();
+			
+				$("#record_list_2").slideToggle();
+			
+		});
+	});
+</script>

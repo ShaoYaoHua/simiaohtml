@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<style>
+
+
+    
+    *{margin: 0;padding: 0;list-style: none;}
+    body{background-color: initial !important;}
+    .pay_box{padding: 0 5%;}
+    .pay_box h1{font-size: 23px;color: #af5825;font-family: KaiTi;text-align: center;padding: 3% 0;}
+    .pay_box ul li b{display: inline-block;width: 30%;float: left;}
+    .pay_box ul li{border: 1px solid #b8b8b8;border-radius: 5px;padding: 7px 18px;font-size: 0.9rem;margin-bottom: 20px;overflow: hidden;position: relative;}
+    .pay_box ul li .right_p {position: absolute;right: 10px;height: 100%;padding: 2px;}
+    .pay_box ul li input {width: 70%;margin: 0;height: 25px;border: none;padding: 0 !important;}
+    textarea{float: left;width: 70%;padding: 0 !important;border: none;text-align: initial;}
+    textarea::-webkit-input-placeholder {
+        color: #aab2bd;
+        font-size: 14px;
+        text-align: center
+    }
+    .pub_btn{width: 60%;height: 45px;text-align: center;font-size:16px;color: #FFF;background: #c83d26;display: block;margin: 15px auto;border: none;border-radius: 5px;}
+    .tog_don{line-height: 45px;}
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+    <div class="pay_box">
+        <h1>湖嘉寺</h1>
+        <ul>
+            <li><b>功德芳名：</b><input type="text"> </li>
+            <li><b>捐款金额：</b><input type="number" oninput="value=value.replace(/[^\d]/g,'')"><span class="right_p">元</span></li>
+            <li><b>手机号码：</b><input oninput = "value=value.replace(/[^\d]/g,'')" type="tel"></li>
+            <li><b>回向内容：</b><textarea placeholder="功德无量，增福增慧、全家幸福、阿弥陀佛！" ></textarea></li>
+        </ul>
+        <button class="pub_btn">已填好、去支付</button>
+        <a class="pub_btn tog_don" href="">好友"一起捐"</a>
+    </div>
+</body>
+</html>
+<script>
+        
+</script>

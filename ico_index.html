@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+    <link rel="stylesheet" href="http://qidian.gtimg.com/lulu/theme/peak/css/common/ui/Tips.css">
+    <script src="http://qidian.gtimg.com/c/=/lulu/theme/peak/js/common/ui/Follow.js,/lulu/theme/peak/js/common/ui/ErrorTip.js,/lulu/theme/peak/js/common/ui/Validate.js"></script>
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    p{margin: 0;}
+    .num_box {
+        width: auto;
+        overflow: hidden;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .num_box p{color: #9f7829;font-size: 16px;display:inline-block;line-height:30px;float: left;}
+    .num_box a{display: inline-block;padding: 3px 10px;color: #FFF;background: #9f7829;float: right;border-radius: 5px;font-size: 14px;}
+    .heng-line{
+        background: url(static/images/top_bg.png) no-repeat center !important;
+        background-size: 100% 100% !important;
+    }
+    .rxys h1 {
+        color: #9f7829;
+        font-weight: bold !important;
+    }
+    .flex_box > li:last-child{margin: 0 auto;}
+    .page_hole{
+        padding: 0 15px;
+    }
+    .num {
+        background: url(static/images/num_black.png) top center repeat-y;
+        width: 14px;
+        height: 16px;
+        float: left;
+        background-size: 100% 150px;
+        position: relative;
+        top: 8px;
+    }
+    .mui-table-view{padding: 0 !important;}
+    .mui-table-view::before{
+        height: 0 !important;
+    }
+    .ico_box{padding: 40px 15px;background: #eeeeee;}
+    .ico_box ul{display: flex;flex-wrap: wrap;}
+    .ico_box ul li{width: 33.3%;overflow: hidden; text-align: center;border: 1px solid #aaaaaa;}
+    .ico_box ul li a{color: initial;font-size: 15px;display: block;text-align: center;height: 100%;width: 100%;}
+    .ico_box ul li img{height: 40%;display: inline-block;margin-top: 10%;}
+    .ico_box ul li p{color: initial;padding-top: 5%;}
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+    <div class="heng-line">
+    </div>
+    <div class="yf_title">
+        <img src="static/images/logo.png" />
+    </div>
+    <div style="line-height: 0;">
+            <img src="static/images/banner.png" alt="" style="width: 100%;" />
+    </div>
+<div class="rxys">
+    <div class="page_hole">
+        <div class="num_box">
+            <p>当前报名人数：</p>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <p>（当天回复）</p>
+            <a href="#">我要参与</a>  
+        </div>
+        <div class="scorll_txt" id="scrollDiv" style="height:88px; overflow: hidden;">
+            <ul class="mui-table-view">
+                <li>2018年11月24日 <span>随喜20元</span></li>
+                <li>2018年11月24日 <span>随喜20元</span></li>
+                <li>2018年11月24日 <span>随喜20元</span></li>
+                <li>2018年11月24日 <span>随喜20元</span></li>
+                <li>2018年11月24日 <span>随喜20元</span></li>
+            </ul>
+        </div>
+
+        
+    </div>
+    <div class="ico_box">
+            <ul>
+                <li><a href="#"><img src="./static/images/index_ico1.png" alt=""><p>观宗咨询</p></a></li>
+                <li><a href="#"><img src="./static/images/index_ico2.png" alt=""><p>太湖大讲坛</p></a></li>
+                <li><a href="#"><img src="./static/images/index_ico3.png" alt=""><p>弘法利生</p></a></li>
+                <li><a href="#"><img src="./static/images/index_ico4.png" alt=""><p>广修供养</p></a></li>
+                <li><a href="#"><img src="./static/images/index_ico5.png" alt=""><p>佛教安养</p></a></li>
+                <li><a href="#"><img src="./static/images/index_ico6.png" alt=""><p>无锡观宗慈友会</p></a></li>
+                <li><a href="#"><img src="./static/images/index_ico7.png" alt=""><p>个人中心</p></a></li>
+                <li><a href="#"><img src="./static/images/index_ico8.png" alt=""><p>禅修须知</p></a></li>
+                <li><a href="#"><img src="./static/images/index_ico9.png" alt=""><p>交通路线</p></a></li>
+            </ul>
+        </div>
+    
+</div>
+
+<script src="static/js/index.js"></script>
+<script>
+    $(function(){
+        var flexHei=$('.ico_box ul > li').width();
+        $('.ico_box ul > li').height(flexHei)+'px';
+    })
+</script>
+<script>
+    (function ($) {
+        $.fn.myScroll = function (options) {
+            //默认配置
+            var defaults = {
+                speed: 40,  //滚动速度,值越大速度越慢
+                rowHeight: 24 //每行的高度
+            };
+
+            var opts = $.extend({}, defaults, options), intId = [];
+
+            function marquee(obj, step) {
+
+                obj.find("ul").animate({
+                    marginTop: '-=1'
+                }, 0, function () {
+                    var s = Math.abs(parseInt($(this).css("margin-top")));
+                    if (s >= step) {
+                        $(this).find("li").slice(0, 1).appendTo($(this));
+                        $(this).css("margin-top", 0);
+                    }
+                });
+            }
+
+            this.each(function (i) {
+                var sh = opts["rowHeight"], speed = opts["speed"], _this = $(this);
+                intId[i] = setInterval(function () {
+                    if (_this.find("ul").height() <= _this.height()) {
+                        clearInterval(intId[i]);
+                    } else {
+                        marquee(_this, sh);
+                    }
+                }, speed);
+
+                _this.hover(function () {
+                    clearInterval(intId[i]);
+                }, function () {
+                    intId[i] = setInterval(function () {
+                        if (_this.find("ul").height() <= _this.height()) {
+                            clearInterval(intId[i]);
+                        } else {
+                            marquee(_this, sh);
+                        }
+                    }, speed);
+                });
+
+            });
+
+        }
+
+    })(jQuery);
+
+$("#scrollDiv").myScroll({
+    speed: 40, //数值越大，速度越慢
+    rowHeight: 22 //li的高度
+});
+</script>
+<script type="text/javascript" charset="utf-8">
+    function gohome()
+
+    {
+        $.ajax({
+            type: 'post',
+            url: '/Simiao/Center/wx_getcode',
+            success: function (sjson) {
+
+                location.href = sjson.url;
+            }
+        })
+    }
+    $(function () {
+        var u = 30;
+        function gun() {
+            $(".num").css('backgroundPositionY', 0);
+            var result = 621;
+            var num_arr = (result + '').split('');
+            $(".num").each(function (index) {
+                var _num = $(this);
+                setTimeout(function () {
+                    _num.animate({
+                        backgroundPositionY: (u * 60) - (u * num_arr[index])
+                    }, {
+                        duration: 1000 + index * 1000,
+                        easing: "swing",
+                        complete: function () {
+                            if (index == 3) isBegin = false;
+                        }
+                    });
+
+                }, index * 300);
+
+            });
+
+        }
+        gun();
+
+    });
+</script>
+    <input name="__RequestVerificationToken" type="hidden" value="Zkf-nLPli1KMn8xLCnDRocRL9_UT8hZ4EXV3g5OhSyK9hSJW2kds_r7XpO5j0CidgjWgoZwtelOSEgQ_BF06RvKLm2QF7dQiyk-qmF5_BiA1" />
+</body>
+</html>

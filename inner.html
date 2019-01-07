@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    .rxys{background: none !important;}
+    body{
+        background: url(static/images/bg_pic.png) no-repeat,
+                    url(static/images/bg_pic2.png) no-repeat !important;
+                    background-position: 0 300px, 0 660px !important;
+        
+    }
+    p{color: #666666;}
+    .num_box {     
+        width: auto;
+        float:right;
+        z-index: 8;
+        overflow: hidden;
+        text-align: center;
+    }
+    .mui-table-view:after {
+        height: 0 !important;
+        content: '';
+    }
+    .num {
+        background: url(static/images/num_black.png) top center repeat-y;
+        width: 18px;
+        height: 30px;
+        float: left;
+        background-size: 16px 300px;
+    }
+    .heng-line{
+        background: url(static/images/top_bg.png) no-repeat center !important;
+        background-size: 100% 100% !important;
+    }
+    .rxys h1{color: #9f7829;font-weight: bold !important;}
+    .mui-table-view{padding-top: 0.7rem;background: none !important;}
+    .mui-table-view > li{
+        width: 85%;
+        border: 1px solid #e2d9bf;
+        box-sizing: border-box;
+        /* padding: 0 0.7rem; */
+        margin: 0 auto;
+        border-radius: 5px;
+        margin-bottom: 36px;
+    }
+    .mui-table-view > li h2{margin:0;height: 35px;width: 100%;line-height: 35px;text-align: center;background: #e2d9bf;color: #9f7829;font-size: 21px;font-family: KaiTi;}
+    .text_gd{padding: 20px 15px;font-size: 18px;font-family: KaiTi;}
+    .scorll_txt li{border: none;padding: 0;width: 100%;margin-bottom: 0;font-size: 18.5px !important;font-family: KaiTi !important;}
+    .scorll_txt li span{float: right;}
+    footer {
+        height: 50px !important;
+        line-height: 50px !important;
+        border-top: 1px solid #c8c7cc;
+    }
+    .btn_b{
+        font-size: 23.5px;
+        font-family: KaiTi;
+        height: 42px;
+        width: 200px;
+        display: block;
+        margin: 0 auto;
+        border: none;
+        background: #e2d9bf;
+        color: #9f7829;
+    }
+    .masking_box {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10000;
+        display: none;
+    }
+    .popup_menu{
+        width: 85%;
+        height: auto;
+        margin: 20% auto;
+        background: #FFF;
+        border-radius: 15px;
+        box-sizing: border-box;
+        padding: 30px;
+    }
+    .popup_menu ul li{
+        border: 1px solid #a87e2b;
+        border-radius: 5px;
+        padding: 3px 18px;
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+    .popup_menu .pay_but{
+        border: none;
+        display: block;
+        margin: 0 auto;
+        width: 135px;
+        height: 35px;
+        background: #a17d36;
+        color: #FFF;
+    }
+    .popup_menu ul li input{
+        width: 60%;
+        margin: 0;
+        height: 25px;
+        border: none;
+    }
+    .popup_menu ul li span{float: right;}
+    .popup_menu ul li textarea{
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+    .popup_menu h2{
+        font-size: 18px;
+        font-family: KaiTi;
+        color: #9f7829;
+        text-align: center;
+    }
+    .pop_m2 ul li input, .pop_m2 ul li textarea{padding:2px 5px;}
+    .pop_m2{line-height: 1.5;font-family: KaiTi;}
+    .sel_card{display: flex;justify-content: space-around;}
+    .sel_card li{
+        padding: 0 !important;
+        margin: 10px 10px 10px 0 !important;
+        text-align: center;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        
+    }
+    .sel_card li:last-child{margin-right: 0 !important;}
+    .add_col{
+        background: #9f7829;
+        color: #FFF;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+    <div class="heng-line">
+    </div>
+    <div class="yf_title">
+        <img src="static/images/logo.png" />
+
+    </div>
+    <div style="line-height: 0;">
+        <img src="static/images/banner.png" alt="" style="width: 100%;" />
+    </div>
+
+<div class="rxys">
+    <h1>慈善募捐</h1>
+    <ul class="mui-table-view">
+       <li>
+            <h2>慈善募捐的功德</h2>
+            <p class="text_gd">出于人道主义动机，捐赠或资助慈善事业的社会活动。公共关系的慈善捐赠工作除了捐赠现款与实物外，还常常借助传播媒介如广播、电视、报刊等宣传慈善事业，引起社会公众对慈善事业的关心与支持，普及人道主义及社会公益思想、从而改善慈善机构的物质条件，创造良好的社会环境，弘扬正义与爱心。</p>
+       </li>
+       <li>
+            <h2>功德榜</h2>
+            <div class="scorll_txt" id="scrollDiv" style="height:88px; overflow: hidden;">
+                    <ul class="mui-table-view">
+                        <li>2018年11月24日 <span>随喜20元</span></li>
+                        <li>2018年11月24日 <span>随喜20元</span></li>
+                        <li>2018年11月24日 <span>随喜20元</span></li>
+                        <li>2018年11月24日 <span>随喜20元</span></li>
+                        <li>2018年11月24日 <span>随喜20元</span></li>
+
+                    </ul>
+            </div>
+            
+       </li>
+       <button class="btn_b">我要随喜</button>
+    </ul>
+
+    
+</div>
+<div class="masking_box">
+        <!-- <div class="popup_menu">
+            <ul>
+                <li>姓名：<input type="text" /> </li>
+                <li>随喜：<input type="number" oninput = "value=value.replace(/[^\d]/g,'')"/><span>元</span></li>
+                <li>电话：<input type="tel" /></li>
+                <li>愿望：<textarea></textarea></li>
+            </ul>
+            <input class="pay_but" type="button" value="确认支付"/>
+        </div> -->
+
+        <div class="popup_menu pop_m2">
+            <h2>护持安养</h2>
+            <ul class="sel_card">
+                <li class="add_col">50元</li>
+                <li>100元</li>
+                <li>500元</li>
+                <li>1000元</li>
+            </ul>
+            <ul>
+                姓名（必填）<li><input type="text" /> </li>
+                联系方式（必填）<li><input type="text" /></li>
+                愿他<li><textarea></textarea></li>
+            </ul>
+            <input class="pay_but" type="button" value="确认支付"/>
+        </div>
+</div>
+<script>
+    $(function () {
+        $(document).ready(function () {
+            $('body').height($('body')[0].clientHeight);
+        });
+        $('.btn_b').click(function(){
+            $(".masking_box").fadeIn();
+
+        })
+        $(".masking_box").click(function () {
+            if (event.target == this) {
+                $(".masking_box").fadeOut();
+            }
+        })
+        $(".sel_card li").click(function () {
+            $(this).addClass("add_col").siblings().removeClass("add_col");
+        })
+    })
+</script>
+<script>
+    (function ($) {
+        $.fn.myScroll = function (options) {
+            //默认配置
+            var defaults = {
+                speed: 40,  //滚动速度,值越大速度越慢
+                rowHeight: 24 //每行的高度
+            };
+
+            var opts = $.extend({}, defaults, options), intId = [];
+
+            function marquee(obj, step) {
+
+                obj.find("ul").animate({
+                    marginTop: '-=1'
+                }, 0, function () {
+                    var s = Math.abs(parseInt($(this).css("margin-top")));
+                    if (s >= step) {
+                        $(this).find("li").slice(0, 1).appendTo($(this));
+                        $(this).css("margin-top", 0);
+                    }
+                });
+            }
+
+            this.each(function (i) {
+                var sh = opts["rowHeight"], speed = opts["speed"], _this = $(this);
+                intId[i] = setInterval(function () {
+                    if (_this.find("ul").height() <= _this.height()) {
+                        clearInterval(intId[i]);
+                    } else {
+                        marquee(_this, sh);
+                    }
+                }, speed);
+
+                _this.hover(function () {
+                    clearInterval(intId[i]);
+                }, function () {
+                    intId[i] = setInterval(function () {
+                        if (_this.find("ul").height() <= _this.height()) {
+                            clearInterval(intId[i]);
+                        } else {
+                            marquee(_this, sh);
+                        }
+                    }, speed);
+                });
+
+            });
+
+        }
+
+    })(jQuery);
+
+$("#scrollDiv").myScroll({
+    speed: 40, //数值越大，速度越慢
+    rowHeight: 22 //li的高度
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+<footer>
+    <img style="width:80px;" src="static/images/bot_logo.png" alt="" />
+    <span class="foot_txt"> 技术支持 无锡苏商</span>
+</footer>
+
+
+    <script src="static/js/index.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+
+    function gohome()
+
+    {
+        $.ajax({
+                        type: 'post',
+                        url: '/Simiao/Center/wx_getcode',
+                        success: function (sjson) {
+
+                            location.href = sjson.url;
+                        }
+                    })
+
+
+
+
+
+    }
+
+
+    $(function () {
+        var u = 30;
+        function gun() {
+            $(".num").css('backgroundPositionY', 0);
+            var result = 621;
+            var num_arr = (result + '').split('');
+            $(".num").each(function (index) {
+                var _num = $(this);
+                setTimeout(function () {
+                    _num.animate({
+                        backgroundPositionY: (u * 60) - (u * num_arr[index])
+                    }, {
+                        duration: 1000 + index * 1000,
+                        easing: "swing",
+                        complete: function () {
+                            if (index == 3) isBegin = false;
+                        }
+                    });
+
+                }, index * 300);
+
+            });
+
+        }
+        gun();
+        var mar_h=($('.yf_title').height()-30)/2;
+        $('.num_box').css('margin-top',mar_h);
+
+    });
+
+
+    $(function () {
+
+
+            var ua = navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i)=="micromessenger") {
+
+
+
+
+
+
+
+            } else {
+
+                $("#isplay").hide();
+
+            }
+
+
+    })
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: 'wx75f7d78a646f521e', // 必填，公众号的唯一标识
+        timestamp: '1546393278', // 必填，生成签名的时间戳
+        nonceStr: '164BC7C44126EBEC86F9276687961405', // 必填，生成签名的随机串
+        signature: 'fd4f373f7ae6f92093ffa23291b10e02bdcf165e',// 必填，签名，见附录1
+        jsApiList: ["checkJsApi", "onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ", "onMenuShareQZone"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+
+    wx.ready(function () {
+
+        //朋友圈
+        wx.onMenuShareTimeline({
+            title: '云峰禅寺助建大雄宝殿', // 分享标题
+            link: 'http://yfs.wxsushang.com/Simiao/Meiri', // 分享链接
+            imgUrl: 'http://yfs.wxsushang.com/img/bottom_logo.png',
+            success: function (res) {
+                location.href = " /Simiao/Meiri/";
+
+                alert('已分享');
+            },
+            cancel: function (res) {
+                alert('已取消');
+            },
+            fail: function (res) {
+                alert(JSON.stringify(res));
+            }
+        });
+        //朋友
+        wx.onMenuShareAppMessage({
+            title: '云峰禅寺助建大雄宝殿', // 分享标题
+            desc: '云峰禅寺助建大雄宝殿已有 621 捐款', // 分享描述
+            link: 'http://yfs.wxsushang.com/Simiao/Meiri', // 分享链接
+            imgUrl: 'http://yfs.wxsushang.com/img/bottom_logo.png', // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+                location.href = " /Simiao/Meiri/";
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+                alert("取消分享");
+            }
+        });
+    });
+
+
+</script>
+
+    <input name="__RequestVerificationToken" type="hidden" value="Zkf-nLPli1KMn8xLCnDRocRL9_UT8hZ4EXV3g5OhSyK9hSJW2kds_r7XpO5j0CidgjWgoZwtelOSEgQ_BF06RvKLm2QF7dQiyk-qmF5_BiA1" />
+</body>
+</html>

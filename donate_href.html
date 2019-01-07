@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    body, html{background: none !important;height: 100%;}
+    .yiqijuan_content{
+        background: url(static/images/toge_bg.png) no-repeat center ;
+        background-size: 100% 100%;
+        margin-top: 50px;
+        height: 100%;
+    }
+    .yiqijuan_share {
+        height: 45px;
+        padding: 0 20px  0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+        
+        background-color: #a37c2c;
+    }
+    .yiqijuan_share img {
+        width: 20px;
+        float: right;
+    }
+    .yiqijuan_share p {
+        line-height: 45px;
+        font-size: 16px;
+        float: left;
+        color: #fff !important;
+    }
+    .person_top {
+        width: 100%;
+        height: auto;
+        padding-top: 40px;
+    }
+    .person_top > div {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .person_top p{
+        text-align: center;
+        font-size: 18px;
+        color: #a37c2c;
+        margin: 0 !important;
+        line-height: 1.5;
+    }
+    .yiqijuan_text{color: #555555 !important;font-size: 15px !important;}
+    .person_top img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    #target_amount {
+        height: 193px;
+        position: relative;
+        padding: 2% 10%;
+        z-index: 2;
+    }
+    #target_amount img {
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 20px auto;
+    }
+    #amount_text {
+        width: 80%;
+        height: 110px;
+        position: absolute;
+        bottom: 0;
+        border: 1px solid #9f7829;
+        box-sizing: border-box;
+        z-index: -10;
+        border-radius: 5px;
+    }
+    #amount_text p {
+        width: 100%;
+        text-align: center;
+        bottom: 0;
+        position: absolute;
+        font-size: 16px;
+        height: 60px;
+        line-height: 75px;
+    }
+    #amount_text p{font-size: 16px;}
+    #amount_text p span{color: #4b0617;}
+    .zhujian {
+        height: 100px;
+        width: 80%;
+        margin: 45px auto 0;
+        border: 1px solid #9f7829;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+    .zhujian img {
+        width: 120px;
+        height: 75px;
+        margin: 10px 10px;
+        float: left;
+        border-radius: 10px;
+    }
+    .zhujian dl {
+        float: left;
+        font-size: 15px;
+        margin-top: 25px;
+        color: #555555;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+
+<div class="yiqijuan_content">
+        <div class="yiqijuan_share">
+                <p>点右上角，发送给朋友创建一起捐！</p><img src="static/images/share_gz.png">
+            </div>
+        <div class="person_top">
+                <div>
+                    <img src="static/images/head_pic.png">
+                </div>
+                <p>张迪迪 邀您一起行善积福</p>
+                <p class="yiqijuan_text">每人奉献一点点，将会凝聚巨大的力量</p>
+            </div>
+        <div id="target_amount">
+            <img src="static/images/toge_pic.png">
+            <div id="amount_text">
+                <p>目标金额：<span>100</span>元</p>
+            </div>
+        </div>
+        <div class="zhujian">
+            <img src="static/images/timg.jpg">
+            <dl>
+                <dt>"日行一善"供斋</dt>
+                <dd>供斋简介</dd>
+            </dl>
+        </div>
+    </div>
+</body>
+</html>

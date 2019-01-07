@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    html, body{height: 100%;width: 100%}
+    .rxys{height: 100%;width: 100%;background: url(static/picture/bg1.png) no-repeat center top;background-size: 100% 100%;}
+    .logo{padding: 20px;}
+    .logo img{height: 60px;}
+    .pay_box{padding: 2% 10%;}
+    .pay_box ul{display: flex;flex-wrap: wrap;}
+    .pay_box ul li{width: 27%;overflow: hidden; margin-bottom:8%;margin-right: 9.3%;background: url(static/picture/btn_pay.png) no-repeat center center;background-size: 100% 100%;text-align: center; }
+    .pay_box ul li:nth-child(3n){
+        margin-right: 0;
+    }
+    .pay_box ul li a{color: initial;}
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+    <div class="rxys">
+        <div class="logo"><img src="static/picture/logo_hjs.png" alt=""></div>
+        <div class="pay_box">
+
+            <ul>
+                <li><a href="">壹元</a></li>
+                <li>伍元</li>
+                <li>贰拾元</li>
+                <li>叁拾元</li>
+                <li>伍拾元</li>
+                <li>捌拾元</li>
+                <li>壹佰元</li>
+                <li>贰佰元</li>
+                <li>随喜</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+        $(function(){
+            var flexHei=$('.pay_box ul > li').width();
+            $('.pay_box ul > li').height(flexHei)+'px';
+            $('.pay_box ul > li').css("line-height", flexHei+'px')
+        })
+</script>

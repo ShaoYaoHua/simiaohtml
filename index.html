@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<style>
+    .num_box {     
+        width: auto;
+        float:right;
+        z-index: 8;
+        overflow: hidden;
+        text-align: center;
+    }
+    .heng-line{
+        background: url(static/images/top_bg.png) no-repeat center !important;
+        background-size: 100% 100% !important;
+    }
+    .num {
+        background: url(static/images/num_black.png) top center repeat-y;
+        width: 18px;
+        height: 30px;
+        float: left;
+        background-size: 16px 300px;
+    }
+    footer {
+        height: 50px !important;
+        line-height: 50px !important;
+        border-top: 1px solid #c8c7cc;
+    }
+    .scorll_txt{background: url(static/images/bg_pic.png) no-repeat;background-size: 100% 100%;}
+    .scorll_txt li {
+        font-family: initial !important;
+        font-size: 16px !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .scorll_txt .mui-table-view {
+        padding: 6px 25px !important;
+    }
+    .rxys h1 {
+        color: #9f7829;
+        font-weight: bold !important;
+    }
+    .rxys .mui-media-body .lover_ico {
+        float: right;
+    }
+    .mui-ellipsis{float: left;}
+    .mui-ellipsis span{
+        font-size: 16px !important;
+        color: #000;
+        display: block;
+    }
+    .rxys .mui-media-body {
+        padding-top: 8px;
+    }
+    .lover_ico{
+        text-align: center;
+        line-height: 1.5 !important;
+        background: url(static/images/ico.png) no-repeat center top;
+        padding: 30px 0 0 0;
+        background-size: 20px;
+        background-position-y: 7px;
+    }
+    .lover_ico img{
+        height: 20px;
+    }
+    .spec_index .mui-ellipsis{float: none;}
+    .spec_index .mui-ellipsis span{display: inline;}
+    .spec_index .xing{background: url(static/images/ico.png) no-repeat left center !important;background-size: 16.07px 14px !important;}
+    .spec_index img{border-radius: 50% !important;height: 5rem !important;width: 5rem !important;margin-right: 20px !important;}
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+    <div class="heng-line">
+    </div>
+    <div class="yf_title">
+        <img src="static/images/logo.png" />
+        <div class="num_box">
+                    <div class="num"></div>
+                    <div class="num"></div>
+                    <div class="num"></div>
+            <p style="display:inline-block;line-height:30px;margin:0 0 0 3px;float:left;color:#979696;">份随喜</p>
+        </div>
+
+    </div>
+    <div style="line-height: 0;">
+            <img src="static/images/banner.png" alt="" style="width: 100%;" />
+    </div>
+
+
+<div class="scorll_txt" id="scrollDiv" style="height:88px; overflow: hidden;">
+    <ul class="mui-table-view">
+                    <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                    <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                    <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                    <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                    <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                    <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+
+
+
+    </ul>
+</div>
+
+<script>
+    (function ($) {
+        $.fn.myScroll = function (options) {
+            //默认配置
+            var defaults = {
+                speed: 40,  //滚动速度,值越大速度越慢
+                rowHeight: 24 //每行的高度
+            };
+
+            var opts = $.extend({}, defaults, options), intId = [];
+
+            function marquee(obj, step) {
+
+                obj.find("ul").animate({
+                    marginTop: '-=1'
+                }, 0, function () {
+                    var s = Math.abs(parseInt($(this).css("margin-top")));
+                    if (s >= step) {
+                        $(this).find("li").slice(0, 1).appendTo($(this));
+                        $(this).css("margin-top", 0);
+                    }
+                });
+            }
+
+            this.each(function (i) {
+                var sh = opts["rowHeight"], speed = opts["speed"], _this = $(this);
+                intId[i] = setInterval(function () {
+                    if (_this.find("ul").height() <= _this.height()) {
+                        clearInterval(intId[i]);
+                    } else {
+                        marquee(_this, sh);
+                    }
+                }, speed);
+
+                _this.hover(function () {
+                    clearInterval(intId[i]);
+                }, function () {
+                    intId[i] = setInterval(function () {
+                        if (_this.find("ul").height() <= _this.height()) {
+                            clearInterval(intId[i]);
+                        } else {
+                            marquee(_this, sh);
+                        }
+                    }, speed);
+                });
+
+            });
+
+        }
+
+    })(jQuery);
+
+$("#scrollDiv").myScroll({
+    speed: 40, //数值越大，速度越慢
+    rowHeight: 22 //li的高度
+});
+</script>
+
+  
+
+
+
+
+
+<div class="rxys">
+    <h1>日行一善</h1>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-media">
+            <a href="/Simiao/Meiri/MainRx?id=1">
+                <img class="mui-media-object mui-pull-left" src="static/picture/rx1.jpg">
+                <div class="mui-media-body">
+                    <p class="mui-ellipsis"><span>建寺功德</span>随喜捐助、功德无量</p>
+                    <p class="lover_ico">
+                        共<span>0</span>份
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li class="mui-table-view-cell mui-media">
+            <a href="/Simiao/Meiri/MainRx?id=2">
+                <img class="mui-media-object mui-pull-left" src="static/picture/rx2.jpg">
+                <div class="mui-media-body">
+                        <p class="mui-ellipsis"><span>建寺功德</span>随喜捐助、功德无量</p>
+                        <p class="lover_ico">
+                            共<span>0</span>份
+                        </p>
+                </div>
+            </a>
+        </li>
+        <li class="mui-table-view-cell mui-media">
+            <a href="/Simiao/Meiri/MainRx?id=3">
+                <img class="mui-media-object mui-pull-left" src="static/picture/rx3.jpg">
+                <div class="mui-media-body">
+                        <p class="mui-ellipsis"><span>建寺功德</span>随喜捐助、功德无量</p>
+                        <p class="lover_ico">
+                            共<span>0</span>份
+                        </p>
+                </div>
+            </a>
+        </li>
+
+
+
+
+        <!-- 样式二 -->
+        <li class="mui-table-view-cell spec_index">
+            <a href="/Simiao/Meiri/MainRx?id=3">
+                <img class="mui-media-object mui-pull-left" src="static/picture/rx3.jpg">
+                <div class="mui-media-body">
+                    <span>圆融大斋</span>
+                    <p class="mui-ellipsis">供斋积累大福报</p>
+                    <p class="mui-ellipsis xing"><span> 232</span>元/堂</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<footer>
+    <img style="width:80px;" src="static/images/bot_logo.png" alt="" />
+    <span class="foot_txt"> 技术支持 无锡苏商</span>
+</footer>
+
+
+    <script src="static/js/index.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+
+    function gohome()
+
+    {
+        $.ajax({
+                        type: 'post',
+                        url: '/Simiao/Center/wx_getcode',
+                        success: function (sjson) {
+
+                            location.href = sjson.url;
+                        }
+                    })
+
+
+
+
+
+    }
+
+
+    $(function () {
+        var u = 30;
+        function gun() {
+            $(".num").css('backgroundPositionY', 0);
+            var result = 621;
+            var num_arr = (result + '').split('');
+            $(".num").each(function (index) {
+                var _num = $(this);
+                setTimeout(function () {
+                    _num.animate({
+                        backgroundPositionY: (u * 60) - (u * num_arr[index])
+                    }, {
+                        duration: 1000 + index * 1000,
+                        easing: "swing",
+                        complete: function () {
+                            if (index == 3) isBegin = false;
+                        }
+                    });
+
+                }, index * 300);
+
+            });
+
+        }
+        gun();
+        var mar_h=($('.yf_title').height()-30)/2;
+        $('.num_box').css('margin-top',mar_h);
+
+    });
+
+
+    $(function () {
+
+
+            var ua = navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i)=="micromessenger") {
+
+
+
+
+
+
+
+            } else {
+
+                $("#isplay").hide();
+
+            }
+
+
+    })
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: 'wx75f7d78a646f521e', // 必填，公众号的唯一标识
+        timestamp: '1546393278', // 必填，生成签名的时间戳
+        nonceStr: '164BC7C44126EBEC86F9276687961405', // 必填，生成签名的随机串
+        signature: 'fd4f373f7ae6f92093ffa23291b10e02bdcf165e',// 必填，签名，见附录1
+        jsApiList: ["checkJsApi", "onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ", "onMenuShareQZone"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+
+    wx.ready(function () {
+
+        //朋友圈
+        wx.onMenuShareTimeline({
+            title: '云峰禅寺助建大雄宝殿', // 分享标题
+            link: 'http://yfs.wxsushang.com/Simiao/Meiri', // 分享链接
+            imgUrl: 'http://yfs.wxsushang.com/img/bottom_logo.png',
+            success: function (res) {
+                location.href = " /Simiao/Meiri/";
+
+                alert('已分享');
+            },
+            cancel: function (res) {
+                alert('已取消');
+            },
+            fail: function (res) {
+                alert(JSON.stringify(res));
+            }
+        });
+        //朋友
+        wx.onMenuShareAppMessage({
+            title: '云峰禅寺助建大雄宝殿', // 分享标题
+            desc: '云峰禅寺助建大雄宝殿已有 621 捐款', // 分享描述
+            link: 'http://yfs.wxsushang.com/Simiao/Meiri', // 分享链接
+            imgUrl: 'http://yfs.wxsushang.com/img/bottom_logo.png', // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+                location.href = " /Simiao/Meiri/";
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+                alert("取消分享");
+            }
+        });
+    });
+
+
+</script>
+
+    <input name="__RequestVerificationToken" type="hidden" value="Zkf-nLPli1KMn8xLCnDRocRL9_UT8hZ4EXV3g5OhSyK9hSJW2kds_r7XpO5j0CidgjWgoZwtelOSEgQ_BF06RvKLm2QF7dQiyk-qmF5_BiA1" />
+</body>
+</html>

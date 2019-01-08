@@ -79,6 +79,9 @@
     .join_text li{font-size: 14px;}
     .join_text li:first-child{font-size: 20px;padding: 10px 0; }
     .join_text li a{text-decoration: underline;color: #9f7829;}
+
+    .checkbox{height: 16px;width: 16px;background: #9f7829;display: inline-block;position: relative;top: 3px;margin-right: 5px;border-radius: 4px;}
+    .checkbox img{width: 100%;display: none;}
 </style>
 <link rel="stylesheet" type="text/css" href="static/css/index.css" />
 <link rel="stylesheet" type="text/css" href="static/css/easing.css" />
@@ -165,12 +168,28 @@
                 <p>申请说明</p>
                 <textarea placeholder="请输入您参加的原因或目的" cols="30" rows="5"></textarea>
                 <div class="cell">
-                    <input type="checkbox" id="checkAgree" required=""><label class="ui-checkbox" for="checkAgree"></label><label class="ml5 f14" for="checkAgree">我声明：以上内容真实、没有隐瞒健康情况。</label>
+                    <div class="checkbox"><img src="static/images/checkbox.png"/></div><label class="ml5 f14" for="checkAgree">我声明：以上内容真实、没有隐瞒健康情况。</label>
                 </div>
                 <div class="cell2">
                     <input type="submit" value="提交报名">
                 </div>
             </form>
+
+            <script>
+                $(function(){
+                    var i=false;
+                    $('.checkbox').click(function(){
+                        if(i==false){
+                            $(this).children().css('display', 'block')
+                        }else{
+                            $(this).children().css('display', 'none')
+                        }
+                        i=!i;
+                    })
+                    
+                })
+                    
+            </script>
         <ul class="join_text">
             <li>报名说明：</li>
             <li>1.禅修条件:①18岁以上, 65岁以下；性别不限；不能携带儿童。②身心健康，无传染疾病及精神疾病。③目前无违法在逃行为。 </li>

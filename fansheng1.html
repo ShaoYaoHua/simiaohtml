@@ -13,43 +13,43 @@
 <style>
     *{margin: 0;padding: 0;list-style: none;}
     html, body{height: 100%;width: 100%;}
-    .rxys{height: 100%;width: 100%;background: url(static/picture/fangsheng_bg.jpg) no-repeat center top;background-size: 100% 100%;}
-    .logo{padding: 20px;text-align: center;}
-    .logo img{height: 60px;}
+    .rxys{height: 100%;width: 100%;background: url(static/picture/bg_big.png) no-repeat center top;background-size: cover;}
+    .logo{padding: 15% 0;overflow: hidden;}
+    .logo img{width: 40%;float: right;}
     .fangsheng_box{padding: 0 5% 50px;}
-    .fs_header{height: 40px;background: url(static/picture/fs_header.png)no-repeat center top;background-size: 100% 100%;color: #FFF;text-align: center;font-size: 17px;line-height: 40px;}
-    .fs_contant{height: auto;width: 100%;padding: 2% 5%;background: #FFF;}
-    .fs_contant h3{font-size: 16px !important;text-align: center;padding: 4% 0;}
-    .fs_contant ul li b{display: inline-block;width: 30%;float: left;}
-    .fs_contant ul li{color:#666666;border: 1px solid #c2c2c2;border-radius: 5px;padding: 7px 18px;font-size: 0.9rem;margin-bottom: 20px;overflow: hidden;position: relative;}
-    .fs_contant ul li .right_p {position: absolute;right: 10px;height: 100%;padding: 2px;}
-    .fs_contant ul li input {width: 70%;margin: 0;height: 25px;border: none;padding: 0 !important;}
-    textarea{float: left;width: 70%;padding: 0 !important;border: none;text-align: initial;}
-    textarea::-webkit-input-placeholder {
-        color: #aab2bd;
-        font-size: 14px;
-        text-align: center
-        
+    
+    .nav_ico li{
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+       overflow: hidden;
+       margin-bottom: 10%;
     }
-    .pub_btn{width: 100%;height: 40px;text-align: center;font-size:16px;color: #FFF;background: #c29b77;display: block;margin: 15px auto;border: none;border-radius: 5px;}
+    .nav_ico li a img{width: 100px;float: left;}
+    .nav_ico li a span{font-size: 23px;color: #000;padding-top: 37px;float: right;font-family: KaiTi;}
+    
 </style>
 <link rel="stylesheet" type="text/css" href="static/css/index.css" />
 <link rel="stylesheet" type="text/css" href="static/css/easing.css" />
 <script src="static/js/jweixin-1.1.0.js"></script>
     <div class="rxys">
-        <div class="logo"><img src="static/picture/logo_hjs.png" alt=""></div>
+        
         <div class="fangsheng_box">
-            <div class="fs_header">在线放生</div>
-            <div class="fs_contant">
-                <h3>请填写正确内容</h3>
-                <ul>
-                    <li><b>姓名：</b><input type="text"> </li>
-                    <li><b>捐款金额：</b><input type="number" oninput="value=value.replace(/[^\d]/g,'')"><span class="right_p">元</span></li>
-                    <li><b>手机号码：</b><input oninput = "value=value.replace(/[^\d]/g,'')" type="tel"></li>
-                    <li><b>回向内容：</b><textarea></textarea></li>
-                </ul>
-                <button class="pub_btn">去支付</button>
-            </div>
+            <div class="logo"><img src="static/picture/lqcs_logo.png" alt=""></div>
+            <ul class="nav_ico">
+                <li>
+                    <a href="">
+                        <img src="./static/picture/rxys_ico.png" alt="">
+                        <span>日行一善</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./static/picture/zxgd_ico.png" alt="">
+                        <span>在线供灯</span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </body>

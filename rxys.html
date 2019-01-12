@@ -70,8 +70,7 @@
                                 $(this).css("margin-top", 0);
                             }
                         });
-                    }
-        
+                    }       
                     this.each(function (i) {
                         var sh = opts["rowHeight"], speed = opts["speed"], _this = $(this);
                         intId[i] = setInterval(function () {
@@ -81,7 +80,6 @@
                                 marquee(_this, sh);
                             }
                         }, speed);
-        
                         _this.hover(function () {
                             clearInterval(intId[i]);
                         }, function () {
@@ -93,9 +91,7 @@
                                 }
                             }, speed);
                         });
-        
                     });
-        
                 }
         
             })(jQuery);

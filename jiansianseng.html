@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/swiper.min.css" />
+    <script src="static/js/jquery-2.1.0.js"></script>
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/swiper.min.js"></script>
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    html, body{height: 100%;width: 100%;}
+    .jsxd{height: 100%;width: 100%;background: url(static/picture/jsas_bg.png) no-repeat center top;background-size: 100% 100%;padding:0 3.5%;}
+    .jsxd .logo{text-align: center;padding: 6% 0;}
+    .jsxd .logo img{width: 42%;}
+    .swiper-slide img{width: 100%;height: 100%;border-radius: 50%;}
+    .tag{text-align: center;padding: 10% 0 0;}
+    .jsxd h2{font-size: 25px;text-align: center;line-height: 2;}
+    .jsxd h3{font-size: 15px;text-align: center;}
+    .jsas{height: 60%;}
+    .form li{font-size: 14px;border-bottom: 1px solid #888;}
+    .form li input{width: 70%;margin: 0;height: 25px;border: none;}
+    input{font-size: 14px;}
+    .pay_sel{width: 60%;margin: 0 auto;padding: 5% 0;}
+    .pay_sel li{float: left;overflow: hidden;border: 2px solid #afadad;border-radius: 10px;font-size: 14px;text-align: center;height: 38px;line-height: 38px;width: 45%;margin:0 10% 5% 0;}
+    .pay_sel li:nth-child(2n){margin-right: 0;}
+    .pay_sel li input{width: 100%;text-align: center;border: none;}
+    .go_pay{width: 50%;display: block;margin: 0 auto;color: #fff;background: #ee5245;border-radius: 10px;padding: 3% 0;}
+    .clickAuto{border: 2px solid #ee5245 !important; color: #ee5245;}
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+    <div class="jsxd">
+        <div class="jsas">
+            <div class="logo"><img src="static/picture/jsas_logo.png" alt=""></div>
+            <!-- Swiper 开始-->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="static/picture/gd1.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/picture/gd2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/picture/gd2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/picture/gd2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/picture/gd2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/picture/gd2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/picture/gd2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/picture/gd2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/picture/gd2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="static/picture/gd2.png" alt=""></div>
+                </div>    
+            </div>
+            <!-- Swiper 结束-->
+            <p class="tag"><img src="static/picture/tag.png" alt=""></p>
+            <h2>大雄宝殿</h2>
+            <h3>用于大熊宝殿佛像、佛堂、供桌等费用</h3>
+            
+        </div>
+        <ul class="form">
+            <li><span>真实姓名：</span><input type="text" placeholder="请填写您的姓名"/></li>
+            <li><span>手机号码：</span><input type="number" oninput = "value=value.replace(/[^\d]/g,'')" placeholder="请填写您的手机号码"/></li>
+            <li><span>我的愿望：</span><input type="text" placeholder="请填写您的愿望"/></li>
+        </ul>
+        <ul class="pay_sel">
+            <li><span>50</span>元</li>
+            <li><span>100</span>元</li>
+            <li><span>200</span>元</li>
+            <li><input class="number1" type="number" oninput = "value=value.replace(/[^\d]/g,'')" placeholder="随喜"/></li>
+        </ul>
+        <button class="go_pay">去支付</button>
+    </div>
+</body>
+</html>
+<script>        
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        centeredSlides: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+    $(function(){
+        
+    $(function () {
+        donateB();
+        function donateB() {
+            $(".pay_sel li").click(function () {
+                $(this).addClass("clickAuto").siblings().removeClass("clickAuto");
+                var tmp = $(this).children(0).text();
+                $(".number1").val(tmp);
+                $(".number1").click(function () {
+                    $(this).val("").unbind();
+                    $(".pay_sel li").removeClass("clickAuto");
+                })
+                $(".pay_sel li:last").removeClass("clickAuto").unbind("click");
+            })
+        }
+        //立即捐款
+        $(".go_pay").click(function () {
+            var moneys= $(".number1").val()
+            if (moneys == "" || moneys == undefined) {
+                alert("请选择或输入金额！")
+                money6.hide();  
+            }
+            if (moneys < 1){
+                alert("输入金额不能小于1！")
+                money6.hide(); 
+            }
+        })
+    })
+    })
+</script>

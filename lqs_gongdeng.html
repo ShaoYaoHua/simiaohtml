@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>观宗讲寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    html, body{height: 100%;width: 100%;}
+    .gd_box{text-align:center;height:100%;width: 100%;background: url(static/picture/123.png) no-repeat center top;background-size: 100% 100%;padding: 30% 10% 0;}
+    .gd_box h1{font-size: 18px;font-weight: initial;color: #a30000;padding-bottom: 5%;}
+    .gd_box img{width: 50%;}
+    .popup_menu li {
+        border-radius: 5px;
+        padding: 1% 4%;
+        font-size: 14px;
+        margin-bottom: 2%;
+        text-align: initial;
+        border: 1px solid #d4ccc4;
+        background: rgba(255, 255, 255, 0.7)
+    }
+    .popup_menu li:last-child{margin-bottom: 0;}
+    .popup_menu{position: relative;top: -30px;color: #666666;}
+    .popup_menu li input { width: 65%; margin: 0; height: 25px; border: none; background: none;}
+    .popup_menu li textarea{background: none;border: none;padding: 0;}
+    .gopay{width: 100%;background: #c80000;color: #FFF;height: 8%;border-radius: 5px;position: relative;top: -20px;}
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+    
+    <div class="gd_box">
+        <h1>大雄宝殿供灯笼100元/年</h1>
+        <img src="static/picture/denglong.png" alt="">
+        <ul class="popup_menu">
+            <li>姓名：<input type="text"/></li>
+            <li>电话：<input type="number" oninput = "value=value.replace(/[^\d]/g,'')"/></li>
+            <li>回向内容：<textarea></textarea></li>
+        </ul>
+        <button class="gopay">去支付</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>甘露寺</title>
+    <link rel="stylesheet" type="text/css" href="static/css/mui.min.css" />
+    <script src="static/js/mui.min.js"></script>
+    <script src="static/js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<style>
+    *{margin: 0;padding: 0;list-style: none;}
+    html, body{height: 100%;width: 100%;}
+    .gd_box{text-align:center;height:100%;width: 100%;background: #FEFEFE;padding: 0 5%;font-weight: 400;}
+    .gd_box h1{font-size: 18px;font-weight: initial;color: #000;padding-bottom: 5%;}
+    .gd_box .logo{text-align: center;padding: 10% 0;}
+    .gd_box .logo img{width: 35%;}
+    .popup_menu li {
+        border-radius: 5px;
+        padding: 3% 4%;
+        font-size: 0.9rem;
+        text-align: initial;
+        border-top: 1px solid #d4ccc4;
+        background: rgba(255, 255, 255, 0.7)
+    }
+    .popup_menu li:last-child{margin-bottom: 0;}
+    .popup_menu{color: #000;}
+    .popup_menu li input { width: 75%; margin: 0; height: 25px; border: none; background: none;float: right;font-size: 13px;}
+    .popup_menu li span{color: #A63A3D;width: 75%;float: right;padding: 0 15px;}
+    .gopay{width: 100%;background: #4FA937;color: #FFF;height: 7%;border-radius: 5px;}
+    .copyright{font-size: 13px;padding-top: 20%;}
+</style>
+<link rel="stylesheet" type="text/css" href="static/css/index.css" />
+<link rel="stylesheet" type="text/css" href="static/css/easing.css" />
+<script src="static/js/jweixin-1.1.0.js"></script>
+    
+    <div class="gd_box">
+        <div class="logo"><img src="static/picture/gls_logo.png" alt=""></div>
+        <h1>大雄宝殿供灯笼100元/年</h1>
+        <ul class="popup_menu">
+            <li>姓名：<input placeholder="请输入姓名" type="text"/></li>
+            <li>祈福语：<input placeholder="请输入祈福语" type="text" /></li>
+            <li>功德金:<span>200元</span></li>
+        </ul>
+        <button class="gopay">提交</button>
+
+        <p class="copyright">甘露寺<br/>Copyright ©2019</p>
+    </div>
+</body>
+</html>

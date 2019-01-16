@@ -13,32 +13,37 @@
 <style>
     *{margin: 0;padding: 0;list-style: none;}
     html, body{height: 100%;width: 100%;}
-    .rxys{height: 100%;width: 100%;background: url(static/picture/bg1.png) no-repeat center top;background-size: 100% 100%;}
+    .rxys{height: 100%;width: 100%;background: url(static/picture/bg1.png) no-repeat center top;background-size: 100% 100%;padding:0 18%}
     .logo{padding: 20px;}
     .logo img{height: 60px;}
-    .pay_box{padding: 2% 10%;}
+    .pay_box{padding: 18% 0 0;}
     .pay_box ul{display: flex;flex-wrap: wrap;}
-    .pay_box ul li{width: 27%;overflow: hidden; margin-bottom:8%;margin-right: 9.3%;background: url(static/picture/btn_pay.png) no-repeat center center;background-size: 100% 100%;text-align: center; }
+    .pay_box ul li{ width: 28%;overflow: hidden;font-size: 13px; margin-bottom:8%;margin-right: 7.3%;background: url(static/picture/btn_pay.png) no-repeat center center;background-size: 100% 100%;text-align: center; }
     .pay_box ul li:nth-child(3n){
         margin-right: 0;
     }
     .pay_box ul li a{color: initial;}
-    footer {
-        height: 50px !important;
-        line-height: 50px !important;
-        border-top: 1px solid #c8c7cc;
-        position: fixed;
-        left: 0;
-        width: 100%;
-        bottom: 0;
+    .scorll_txt{text-align: center;height:45%; overflow: hidden;padding-top: 25%;}
+    .scorll_txt ul > li{color: #b00000;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+    .scorll_txt .mui-table-view:after {
+        height: 0 !important;
+    }
+    .scorll_txt .mui-table-view:before {
+        height: 0 !important;
+    }
+    .foot_txt {
+        color: #696969;
+        float: none !important;
+        margin: 0 auto;
+        text-align: center;
+        display: block;
     }
 </style>
 <link rel="stylesheet" type="text/css" href="static/css/index.css" />
 <link rel="stylesheet" type="text/css" href="static/css/easing.css" />
 <script src="static/js/jweixin-1.1.0.js"></script>
     <div class="rxys">
-        <div class="logo"><img src="static/picture/logo_hjs.png" alt=""></div>
-        <div class="scorll_txt" id="scrollDiv" style="height:88px; overflow: hidden;">
+        <div class="scorll_txt" id="scrollDiv">
             <ul class="mui-table-view">
                             <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
                             <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
@@ -46,6 +51,16 @@
                             <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
                             <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
                             <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                            <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                            <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                            <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                            <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                            <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                            <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                            <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                            <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                            <li>张三：  随喜捐助，功德无量，捐赠100元。</li>
+                            
             </ul>
         </div>
         <script>
@@ -97,7 +112,7 @@
             })(jQuery);
         
         $("#scrollDiv").myScroll({
-            speed: 40, //数值越大，速度越慢
+            speed: 100, //数值越大，速度越慢
             rowHeight: 22 //li的高度
         });
         </script>
@@ -115,17 +130,14 @@
                 <li>随喜</li>
             </ul>
         </div>
-
-    </div>
-    <footer>
-        <img style="width:80px;" src="static/picture/logo_hjs.png" alt="" />
         <span class="foot_txt"> 技术支持 无锡苏商</span>
-    </footer>
+    </div>
+    
 </body>
 </html>
 <script>
         $(function(){
-            var flexHei=$('.pay_box ul > li').width();
+            var flexHei=$('.pay_box ul > li').width()/1.2;
             $('.pay_box ul > li').height(flexHei)+'px';
             $('.pay_box ul > li').css("line-height", flexHei+'px')
         })

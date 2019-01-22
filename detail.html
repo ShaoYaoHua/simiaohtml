@@ -140,18 +140,45 @@
     .masking_box2 .popup_menu{padding: 1px 30px 30px;}
     .masking_box2 img{width: 200px;margin-bottom: 10px;display: block;margin: 15px auto;}
     .masking_box2 .pay_but{width: 100%;line-height: 35px;}
+    .gd_title {
+        border-top: 1px solid #c8c7cc !important;
+        border-bottom: 1px solid #c8c7cc !important;
+    }
+    .ganen {
+        border-top: 1px solid #c8c7cc !important;
+        border-bottom: 1px solid #c8c7cc !important;
+    }
+    .msg_body .mui-table-view:after, .msg_body .mui-table-view:before {
+        background-color: #d9d9d9!important;
+    }
+    .banner_box img{max-height: 100px;}
+    .back_home a, .mine_icon a{color: #a46811;}
+    .mine_icon img{height: 20px !important;}
 </style>
 <link rel="stylesheet" type="text/css" href="static/css/index.css" />
 <link rel="stylesheet" type="text/css" href="static/css/easing.css" />
 <script src="static/js/jweixin-1.1.0.js"></script>
     <div class="heng-line">
     </div>
+    <div class="content_title">
+        <div class="back_home">
+            <a href="../Meiri/Index">
+                <span class="mui-icon mui-icon-arrowleft"></span>返回首页
+            </a>
+        </div>
+        <div class="mine_icon">
+            <a onclick="gohome()">
+                <img src="static/images/person_ico.png" />个人中心
+            </a>
+        </div>
+    </div>
     <div class="yf_title">
         <img src="static/images/logo.png" />
         
 
     </div>
-    <div style="line-height: 0;">
+    
+    <div class="banner_box" style="line-height: 0;">
             <img src="static/images/banner.png" alt="" style="width: 100%;" />
     </div>
 
@@ -230,14 +257,138 @@ $("#scrollDiv").myScroll({
     rowHeight: 22 //li的高度
 });
 </script>
-<div class="rxys details_box">
-    <div class="details mui-table-view">
-        <p>详情</p>
+<div class="gd_title mui-clearfix" style="background-color: #fff;">
+    <div class="cont_left mui-pull-left">
+        <p>目标金额(元)</p>
+        <p class="num_color">10000000 .00</p>
+        <p>已捐金额(元)</p>
+        <p class="num_color">6753 .00</p>
     </div>
-    <ul class="details_font">
-        <li>『盂兰盆经』云：若能以饭食、卧具、医药供养十方僧众，藉此十方僧众清净共修，功德回向之力，能使供养者，往昔七世父母、六亲眷属得远离三恶道，现世父母及其本人，长寿无病无恼，衣食自然具足，身心安乐。</li>
-        <li>供斋，施主布施财物于寺中，上供十方诸佛，中奉诸圣贤，下及三途六道一切有情。受此供养者，以诵经礼佛回向护法龙天，使功德主增福增慧、广结佛缘，所愿皆成。</li>
-    </ul>
+    <div class="cont_center mui-pull-left">
+        <div class="circleProgress_wrapper">
+            <div class="wrapper yright">
+                <div class="circleProgress rightcircle"></div>
+            </div>
+            <div class="wrapper yleft">
+                <div class="circleProgress leftcircle"></div>
+            </div>
+            <div class="progress_num">
+                <span> 0.07</span>%
+            </div>
+        </div>
+    </div>
+    <div class="cont_right mui-pull-left">
+        <p>随喜次数</p>
+        <p class="num_color">232人</p>
+        <p>一起捐</p>
+        <p class="num_color">3人</p>
+    </div>
+</div>
+<div class="ganen">
+    <h1>感恩<span> 6</span>位爱心传播者和<span>3</span>位善士</h1>
+    <div class="ttt" style="position:relative;">
+        <div class="shanshi mui-navigate-right">
+
+                        <div class="wrap_ss_tx">
+                            <img src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ2NVHLIh93peLlVjVhPK8ficz2VY4VwWxa1VwDc0icGzjl5ZZlovDSXO1PTic7cJPAEyEgyHhicrd8TA/0" />
+                        </div>
+                        <div class="wrap_ss_tx">
+                            <img src="http://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoDpAFeUhrRqbX2AkkG5AYv4toKbSQzbomV5u9wvb6PKKzpXYyC9O6S5pRgVdz7MXnAd7BjQtwdZg/0" />
+                        </div>
+                        <div class="wrap_ss_tx">
+                            <img src="http://wx.qlogo.cn/mmopen/vi_32/qSang9riay6CstwSZA2J06Ng7YwVhUR9hFc2F4Njn7ZQ2PduU8gN5ibPsqvqbVvl89XICr72Hvz0Tj85RXWoTRYQ/0" />
+                        </div>
+
+  
+        </div>
+        <div class="tiaozhuan" onclick="javascript: window.location.href = '../Meiri/_ChuanboList?id=1&sums=6&allsums=3'"></div>
+    </div>
+    
+    <div class="ss_aboutw">
+
+                        <div class="ss_about" style="display:block;">
+                            
+                            <p>一起来</p>
+
+                        </div>
+                        <div class="ss_about" >
+                            
+                            <p>大家一起做功德</p>
+
+                        </div>
+                        <div class="ss_about" >
+                            
+                            <p>是吗</p>
+
+                        </div>
+
+
+
+
+      
+    </div>
+    </div>
+<style>
+    .ss_about{
+        display:none;
+    }
+</style>
+<script>
+    $(function () {
+        $(".shanshi .wrap_ss_tx").click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".ss_aboutw .ss_about").eq($(this).index()).show().siblings().stop().hide();
+        }).eq(0).addClass("active");
+    })
+</script>
+<div class="mui-content yf_list" style="margin-top: 20px;">
+        <div id="slider" class="mui-slider">
+            <div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                <a class="mui-control-item" href="#item1mobile">详情</a>
+                <a class="mui-control-item" href="#item2mobile">留言</a>
+            </div>
+            
+            <div id="sliderProgressBar" class="mui-slider-progress-bar"></div>
+            <div class="mui-slider-group">
+                <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                    <div id="scroll1" class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <div class="about_cont" >
+                                一砖一瓦，一善一愿！ 愿千千万万位善信的名字，千千万万个善愿集合在一起，同发慈悲心，共满菩萨愿。一座承载了千万个名字，千万个善愿的寺院，必将成为十方善信共同的心灵家园。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="item2mobile" class="mui-slider-item mui-control-content">
+                    <div id="scroll2" class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <div class="msg_body">
+                                <h1>参与善士</h1>
+                                <ul class="mui-table-view">
+                                    <li class="mui-table-view-cell mui-media">
+                                        <a href="javascript:;">
+                                            <img class="mui-media-object mui-pull-left" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKkpsJPqLjxu25nhM7U0ptPBV5ssat9Pq0VWaBmMDiaTDcicUcUhOgQwfT2OHY9bFy3ArVtMibbGlDZw/0">
+                                            <div class="mui-media-body">
+                                                <h2 class="mui-ellipsis">
+                                                    <span>禾子小雨文</span>
+                                                    行善<b>6</b>元
+                                                </h2>
+                                                <p>愿已此功德,庄严佛净土，上报四重恩，下济三途苦</p>
+                                                <p class="date">2019/1/21 11:38:34</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+    
+            </div>
+        </div>
+</div>       
+<div class="rxys details_box">
     <ul class="ico_bbox">
         <li class="btn_b"><img src="static/images/ico3.png" alt=""> 我要随喜</li>
         <li class="btn_b2"><img src="static/images/ico3.png" alt=""> 好友“一起捐”</li>
@@ -309,7 +460,7 @@ $("#scrollDiv").myScroll({
     <script src="static/js/index.js"></script>
 <script type="text/javascript" charset="utf-8">
 
-
+    
 
     function gohome()
 
